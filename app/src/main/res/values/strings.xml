@@ -1,0 +1,214 @@
+<resources>
+    <string name="app_name">Фестиваль Оборона Таганрога</string>
+
+    <string name="user_role0">Зритель</string>
+    <string name="user_role1">VIP-пользователь</string>
+    <string name="user_role2">Спонсор</string>
+
+
+    <string name="la_festival">Фестиваль</string>
+    <string name="la_name">«Оборона Таганрога 1855 года»</string>
+
+    <string name="ls_enter">Вход</string>
+    <string name="ls_email">E-Mail</string>
+    <string name="ls_password">Пароль</string>
+    <string name="ls_empty_field">Поле не может быть пустым</string>
+    <string name="ls_incorrect_email">Некорректный E-Mail</string>
+    <string name="ls_incorrect_password">Некорректный Пароль</string>
+    <string name="ls_incorrect_email_or_pass">Некорректный E-Mail или пароль</string>
+    <string name="ls_server_connection">Отсутсвует соединение с сервером</string>
+    <string name="ls_rec_pass">Восстановить пароль</string>
+    <string name="ls_auth">Авторизация</string>
+    <string name="ls_no_acc">Нет аккаунта?</string>
+    <string name="ls_register">Зарегистрироваться</string>
+    <string name="pr_tittle">Восстановление пароля</string>
+    <string name="pr_email_format">Неверный формат почты</string>
+    <string name="pr_no_email">Пользователь с такой почтой не найден</string>
+    <string name="pr_send_error">Ошибка отправки</string>
+    <string name="pr_send_code">Отправить код</string>
+    <string name="pr_timer">Код можно отправить через: %s секунд</string>
+    <string name="pr_code">Код подтверждения</string>
+    <string name="pr_bad_code">Неправильный код</string>
+    <string name="pr_bad_pass">Неверный формат пароля</string>
+    <string name="pr_new_pass">Новый пароль</string>
+    <string name="ok">ОК</string>
+    <string name="pr_auth">Авторизация</string>
+    <string name="rs_reg">Регистрация</string>
+    <string name="rs_lastname">Фамилия*</string>
+    <string name="rs_empty_field">Поле не может быть пустым</string>
+    <string name="rs_incorrect_lastname_format">Некорректный формат фамилии</string>
+    <string name="rsIncorrectFirstname">Некорректный формат имени</string>
+    <string name="rsIncorrectPatronymic">Некорректный формат отчества</string>
+    <string name="rsFirstname">Имя*</string>
+    <string name="rsPatronymic">Отчество</string>
+    <string name="rsGender">Укажите ваш пол*</string>
+    <string name="rsPhone">Телефон</string>
+    <string name="rsIncorrectPhone">Некорректный формат номера телефона</string>
+    <string name="rsEmail">E-mail*</string>
+    <string name="rsIncorrectEmail">Некорректный E-mail</string>
+    <string name="rsUserExist">Пользователь с таким E-mail уже существует</string>
+    <string name="rsServerError">Отсутсвует соединение с сервером</string>
+    <string name="rsPassword">Пароль*</string>
+    <string name="rsIncorrectPassword">Некорректный формат пароля</string>
+    <string name="rsRegister">Регистрация</string>
+    <string name="rsHaveAcc">Есть аккаунт?</string>
+    <string name="rsAuth">Авторизация</string>
+    <string name="ссYourEvents">Здесь будут размещаться Ваши мероприятия</string>
+    <string name="ccNoEvents">Вы пока не записались ни на одно мероприятие</string>
+    <string name="ccEventsList">Список доступных мероприятий</string>
+    <string name="ccLogin">Для просмотра ваших мероприятий вам необходимо войти в аккаунт</string>
+    <string name="ccDialogQuestion">Вы уверены что хотите записаться,</string>
+    <string name="badgeMaps">Посмотреть на картах</string>
+    <string name="mapsURL">http://maps.google.com/maps?q=loc:%s,%s</string>
+    <string name="badgeVK">Группа ВК</string>
+    <string name="phCantLoadImage">Не удалось загрузить изображение</string>
+    <string name="genderMale">М</string>
+    <string name="genderFemale">Ж</string>
+    <string name="cdYes">Да</string>
+    <string name="cdCancel">Отмена</string>
+    <string name="sdEnterPromo">Введите промокод</string>
+    <string name="sdSend">Отправить</string>
+    <string name="sdCancel">Закрыть</string>
+    <string name="eccDescription">Описание</string>
+    <string name="eccWhere">Как добраться</string>
+    <string name="eccSelectRole">Выберите роль на мероприятии</string>
+    <string name="eccContacts">Контактное лицо:</string>
+    <string name="eccSubscribe">Отписаться</string>
+    <string name="eccUnsubscribe">Записаться</string>
+    <string name="rpReconstructor">Реконструктор</string>
+    <string name="rpSide">Сторона:</string>
+    <string name="rpRussia">Россия</string>
+    <string name="rpEng">Англия и Франция</string>
+    <string name="rpReq">У вас есть реквизит?</string>
+    <string name="rpGun">Оружие</string>
+    <string name="rpCostume">Костюм</string>
+    <string name="rpSize">Размер костюма:</string>
+    <string name="rpSize1">Обхват груди, см</string>
+    <string name="rpSize2">Обхват талии, см</string>
+    <string name="rpSize3">Обхват бёдер, см</string>
+    <string name="rpSize4">Рост, см</string>
+    <string name="rpSize5">Размер обуви</string>
+    <string name="rpBadFormat">Неверный формат</string>
+    <string name="rpLiving">Проживание:</string>
+    <string name="rpBaracs">Казарма</string>
+    <string name="rpSend">Подать заявку</string>
+    <string name="rpDialogQuestion">Введённые данные верны?</string>
+    <string name="aboutDevs">О разработчиках</string>
+    <string name="aboutDevsText">Мобильное приложение разработано студентом 4 курса ИКТИБ ЮФУ направления 09.03.04 «Программная инженерия» Жалниным Д.И. в 2023 году.</string>
+    <string name="festivalName">Фестиваль\n«Оборона Таганрога 1855 года»</string>
+    <string name="afText1">Крымская война 1853–1856 годов не обошла стороной Приазовье. Весной 1855 года британцы и французы, чтобы изолировать Крым от остальной России и остановить поставки вооружения и продовольствия, решили начать операцию в Азовском море.</string>
+    <string name="afText2">Отражение англичан от города Таганрога</string>
+    <string name="afText3">22 мая 1855 года англо-французская эскадра, после разгрома Керчи, Бердянска и Мариуполя, подошла к Таганрогу, чтобы уничтожить склады с продовольствием и обмундированием, предназначенным для осажденного Севастополя. На предложение сдать город, походный атаман И. И. Краснов и военный губернатор Е. П. Толстой ответили «Таганрог – не крепость, орудий у нас нет. Выходите на берег, и мы померимся силами и, если ваша возьмет, поляжем все до последнего». Шесть с половиной часов продолжался обстрел мирного города. Затем на берег был высажен десант и тремя колонами противник начал наступление.</string>
+    <string name="afText4">Граф Толстой Егор Петрович</string>
+    <string name="afText5">В Таганроге практически не было современных укреплений и артиллерии, а гарнизон состоял из полубатальона внутренней стражи, четырёх сотен донских казаков 68–го полка Краснянского и шести сотен учебного казачьего полка из Новочеркасска.\nВ помощь гарнизону была организована добровольная милиция, полторы сотни таможенных чинов, госпитальная и жандармская команды. Общее количество защитников Таганрога составляло чуть более 2–х тысяч человек.\nВ ходе перестрелки и штыковых атак англо–французский десант был отброшен в море. До конца дня продолжался обстрел города. Периодически обстрелы продолжались до конца августа, но Таганрог так и не покорился. А защитники города даже смогла захватить севшую на мель английскую канонерскую лодку «Джаспер», сняв с неё две пушки, флаги и книги сигнальных кодов. После окончания Крымской войны подвиг таганрожцев был высоко оценен императорам Александром II – 166 человек было награждены орденами и медалями, а сам город на 2 года освобождался от налогов.\nПриложение поможет Вам узнать больше о фестивале, на котором каждый из Вас может стать свидетелем реконструкции этих героических событий.\nМеждународный фестиваль «Оборона Таганрога 1855 года» – это ежегодный традиционный полномасштабный исторический фестиваль, основанный в 2016 году и отображающий одно из ярких событие Крымской войны 1853–1856 гг. в Приазовье – оборону города Таганрога. Фестиваль вошел в федеральный ТОП-5 лучших фестивалей, праздников и событий России на выходных в октябре 2018 года.\n</string>
+    <string name="afText6">Историческая реконструкция в 2018 году</string>
+    <string name="afText7">Цель фестиваля «Оборона Таганрога в 1855 году» – напомнить современникам о незаслуженно забытой странице родной истории и с помощью реконструкции «оживить» эти героические события, наглядно показав подвиг предков.
+На этом фестивале сотни реконструкторов и организаторов объединяются, чтобы показать жителям и гостям города значимость участия Таганрога в Крымской войне. Красной нитью через все события проходит знаменитая фраза, которая была сказана вражеским парламентерам – «Русские не сдают своих городов!».
+</string>
+    <string name="afText8">«Именно в этой истории наиболее ярко воплотился наш великий русский дух, поэтому мы и реконструируем эти события, о которых до создания фестиваля «Оборона Таганрога 1855 года» вообще никто не знал»</string>
+    <string name="afText9">Так говорит автор идеи и организатор фестиваля «Оборона Таганрога 1855 года» Елена Сирота.
+</string>
+    <string name="afText10">Площадки фестиваля оборудованы таким образом, что позволяют без особых трудностей принять инвалидов, а на площадках фестиваля всегда работают волонтеры, которые помогут перейти дорогу, подскажут, как пройти до площадки события или окажут первую медицинскую помощь.</string>
+    <string name="contacts">Контакты</string>
+    <string name="contactsContactsAbout">Контакты организатора фестиваля\nЕлены Валерьевны Сироты:</string>
+    <string name="contactsPhone">+7 (918) 552–83–44</string>
+    <string name="contactsMail">evsgold@mail.ru</string>
+    <string name="contactsAboutFest">Подробнее о фестивале:</string>
+    <string name="contactsUrl">https://vk.com/oboronataganroga1855</string>
+    <string name="infoScreenBtnText">Ввести код подтверждения</string>
+    <string name="csdTY">Спасибо за поддержку!</string>
+    <string name="csdBadPromo">Введен неверный промокод</string>
+    <string name="csdNoConnection">Нет соединения с сервером</string>
+    <string name="csdBadPromo2">Введенный промокод был активирован ранее</string>
+    <string name="csdBadPromo3">Введенный промокод недействителен</string>
+    <string name="csdPromoAlreadyActivated">Вы уже активировали промокод</string>
+    <string name="msTimeEvent">Время мероприятия:</string>
+    <string name="msVIPBonuses">Бонусы VIP:</string>
+    <string name="msContacts">Контакты:</string>
+    <string name="msPin1">Площадки событий</string>
+    <string name="msPin2">Заведения HoReCa</string>
+    <string name="mcExitDialogQuestion">Вы уверены что хотите выйти,</string>
+    <string name="menu">Меню</string>
+    <string name="helpMenu">Помощь фестивалю</string>
+    <string name="profile">Профиль</string>
+    <string name="aboutFestival">О Фестивале</string>
+    <string name="aboutApp">О приложении</string>
+    <string name="exit">Выйти</string>
+    <string name="helpMenuTittle">Помощь фестивалю</string>
+    <string name="hmVol">Волонтёр</string>
+    <string name="hmTech">Техподдержка</string>
+    <string name="hmSupp">Обслуживание фестиваля</string>
+    <string name="hmTK">Творческий коллектив</string>
+    <string name="hmSponsor">Спонсор</string>
+    <string name="hmDon">Пожертвования</string>
+    <string name="festHelp">Помощь фестивалю</string>
+    <string name="search">Поиск…</string>
+    <string name="changeData">Смена данных</string>
+    <string name="phoneInFormat">Телефон в формате +7…</string>
+    <string name="badData">Неверный формат данных</string>
+    <string name="psServerError">Ошибка сервера</string>
+    <string name="gender">Укажите ваш пол*</string>
+    <string name="save">Сохранить</string>
+    <string name="psChangeEmail">Сменя почты</string>
+    <string name="psMailInUse">Указанная почта уже используется</string>
+    <string name="psNoConnection">Нет подключения к серверу</string>
+    <string name="psChangePass">Сменя пароля</string>
+    <string name="psOldPass">Старый пароль</string>
+    <string name="psBadPass">Неверный пароль</string>
+    <string name="psNewPass">Новый пароль</string>
+    <string name="psRepeatPass">Повторите новый пароль</string>
+    <string name="psFormatPass">Неверный формат данных</string>
+    <string name="psEmtyField">Поле не может быть пустым</string>
+    <string name="psDifferentPass">Пароль отличается от введенного выше</string>
+    <string name="psEmailFormat">Неправильный формат почты</string>
+    <string name="psNameFormat">Неправильный формат имени</string>
+    <string name="psPhoneFormat">Неправильный формат номера телефона</string>
+    <string name="psLastnameFormat">Неправильный формат фамилии</string>
+    <string name="psPatronymicFormat">Неправильный формат отчества</string>
+    <string name="usYouNotLogin">Вы не вошли в аккаунт</string>
+    <string name="usAuth">Войти/\nЗарегистрироваться</string>
+    <string name="usMale">Мужской</string>
+    <string name="usFemale">Женский</string>
+    <string name="usGender">Пол: </string>
+    <string name="badEnroll">Ошибка отправки заявки</string>
+    <string name="successEnroll">Заявка успешно отправлена</string>
+    <string name="cannotLoadEntries">Не удалось загрузить записи пользователя</string>
+    <string name="cannotUnsubscribe">Не удалось отписаться от события</string>
+    <string name="successUnsubscribe">Вы успешно отписались от события</string>
+    <string name="passwordChanged">Пароль восстановлен</string>
+    <string name="dataChanged">Данные успешно изменены</string>
+    <string name="authSuccess">Вы успешно авторизовались</string>
+    <string name="activationSent">На указанную почту отправлена ссылка активации</string>
+    <string name="logout">Вы вышли из аккаунта</string>
+    <string name="badSession">Время сессии истекло. Войдите в аккаунт еще раз</string>
+    <string name="passwordChangeSuccess">Ваш пароль был успешно изменён</string>
+
+    <string-array name="months">
+        <item name="month1">Января</item>
+        <item name="month2">Февраля</item>
+        <item name="month3">Марта</item>
+        <item name="month4">Апреля</item>
+        <item name="month5">Мая</item>
+        <item name="month6">Июня</item>
+        <item name="month7">Июля</item>
+        <item name="month8">Августа</item>
+        <item name="month9">Сентября</item>
+        <item name="month10">Октября</item>
+        <item name="month11">Ноября</item>
+        <item name="month12">Декабря</item>
+    </string-array>
+
+
+    <!--    //BASE FRAGMENTS-->
+    <!--help menu-->
+    <!--    техподдержка-->
+    <!--    творческий коллектив-->
+    <!--    спонсор-->
+    <!--    пожертвование-->
+    <!--    вип-->
+    <!--    контакты-->
+    <!--    о фестивале-->
+
+    <!--    //user update-->
+
+</resources>
