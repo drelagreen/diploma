@@ -78,7 +78,7 @@ fun PasswordRecoveryScreen(
                     stringResource(R.string.pr_send_error)
                 } else null
             } else null,
-            keyboardType = KeyboardType.Email
+            keyboardType = KeyboardType.Text
         )
 
         Row(

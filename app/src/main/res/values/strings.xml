@@ -67,6 +67,7 @@
     <string name="cdYes">Да</string>
     <string name="cdCancel">Отмена</string>
     <string name="sdEnterPromo">Введите промокод</string>
+    <string name="sdEnteredPromo">Промокод был активирован</string>
     <string name="sdSend">Отправить</string>
     <string name="sdCancel">Закрыть</string>
     <string name="eccDescription">Описание</string>
@@ -182,6 +183,9 @@
     <string name="logout">Вы вышли из аккаунта</string>
     <string name="badSession">Время сессии истекло. Войдите в аккаунт еще раз</string>
     <string name="passwordChangeSuccess">Ваш пароль был успешно изменён</string>
+    <string name="unsubscribeQuestion">Вы действительно хотите отписаться от события?</string>
+    <string name="mshCalendar">Календарь</string>
+    <string name="mshMap">Карта</string>
 
     <string-array name="months">
         <item name="month1">Января</item>

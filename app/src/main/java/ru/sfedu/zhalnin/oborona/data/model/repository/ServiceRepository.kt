@@ -124,12 +124,6 @@ interface ServiceRepository {
     fun getInfoWindow(id: String): ModelResponse<InfoWindow>
 
     /**
-     * Загрузить счетчик мкжчин/женщин для события "бал"
-     * @return ModelResponse<People>
-     */
-    fun getPeople(): ModelResponse<People>
-
-    /**
      * Обновить данные пользователя
      * @param token String
      * @param body UserUpdatable Данные пользователя

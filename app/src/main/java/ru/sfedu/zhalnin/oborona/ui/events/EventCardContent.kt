@@ -14,18 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
-import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
-import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.maps.android.compose.*
 import ru.sfedu.zhalnin.oborona.R
 import ru.sfedu.zhalnin.oborona.data.model.dto.FullEvent
@@ -202,7 +198,7 @@ fun EventCardContent(
                             val uri =
                                 "http://maps.google.com/maps?q=loc:${it.position.latitude},${it.position.longitude}"
                             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
-                            ContextCompat.startActivity(context, intent, null);
+                            ContextCompat.startActivity(context, intent, null)
                             true
                         },
                         title = eventData.name
@@ -315,7 +311,7 @@ fun EventCardContentPreview() {
                 phone = "+79885392305",
                 adress = "г. Таганрог, ул.Чехова 2а",
                 startDateTime = Date(),
-                endDateTime = null,
+                endDateTime = Date(Date().time + 90000000L),
                 roles = listOf(
                     Role(0, "Зритель"), Role(1, "Участник"), Role(2, "Волонтёр")
                 ),

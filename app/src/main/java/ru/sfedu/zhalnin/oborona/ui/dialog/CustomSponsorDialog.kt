@@ -79,7 +79,10 @@ fun CustomSponsorDialog(
                     label = {
                         Text(
                             style = AppTheme.typography.text3,
-                            text = stringResource(R.string.sdEnterPromo)
+                            text = if (state.messageType != InfoScreenViewModel.State.DialogState.MessageType.SUCCESS)
+                                stringResource(R.string.sdEnterPromo)
+                            else
+                                stringResource(R.string.sdEnteredPromo)
                         )
                     },
                     singleLine = true,
@@ -124,6 +127,90 @@ fun CustomSponsorDialogPreview() {
     var okValue by remember { mutableStateOf("1234") }
     var value by remember { mutableStateOf("") }
     var isError by remember { mutableStateOf(false) }
+    var isSuccess by remember { mutableStateOf(false) }
+
+    AppTheme {
+        CustomSponsorDialog(
+            state = InfoScreenViewModel.State.DialogState(
+                dialogValue = value,
+                messageType = if (isError) {
+                    InfoScreenViewModel.State.DialogState.MessageType.ERROR
+                } else {
+                    if (isSuccess) {
+                        InfoScreenViewModel.State.DialogState.MessageType.SUCCESS
+                    } else {
+                        InfoScreenViewModel.State.DialogState.MessageType.NONE
+                    }
+                },
+                dialogMessage = null,
+            ),
+            sendCode = {
+                if (it == okValue) {
+                    value = ""
+                    isError = false
+                    isSuccess = true
+                } else {
+                    isError = true
+                    isSuccess = false
+                }
+            },
+            onDismiss = {},
+            onValueChange = {
+                value = it
+            },
+        )
+    }
+}
+
+
+@Preview
+@Composable
+fun CustomSponsorDialogPreview2() {
+    val okValue by remember { mutableStateOf("1234") }
+    var value by remember { mutableStateOf("") }
+    var isError by remember { mutableStateOf(false) }
+    var isSuccess by remember { mutableStateOf(true) }
+
+    AppTheme {
+        CustomSponsorDialog(
+            state = InfoScreenViewModel.State.DialogState(
+                dialogValue = value,
+                messageType = if (isError) {
+                    InfoScreenViewModel.State.DialogState.MessageType.ERROR
+                } else {
+                    if (isSuccess) {
+                        InfoScreenViewModel.State.DialogState.MessageType.SUCCESS
+                    } else {
+                        InfoScreenViewModel.State.DialogState.MessageType.NONE
+                    }
+                },
+                dialogMessage = null,
+            ),
+            sendCode = {
+                if (it == okValue) {
+                    value = ""
+                    isError = false
+                    isSuccess = true
+                } else {
+                    isError = true
+                    isSuccess = false
+                }
+            },
+            onDismiss = {},
+            onValueChange = {
+                value = it
+            },
+        )
+    }
+}
+
+
+@Preview
+@Composable
+fun CustomSponsorDialogPreview3() {
+    var okValue by remember { mutableStateOf("1234") }
+    var value by remember { mutableStateOf("testtest") }
+    var isError by remember { mutableStateOf(true) }
     var isSuccess by remember { mutableStateOf(false) }
 
     AppTheme {

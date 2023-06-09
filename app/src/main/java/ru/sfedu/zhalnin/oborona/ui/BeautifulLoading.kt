@@ -2,7 +2,6 @@ package ru.sfedu.zhalnin.oborona.ui
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.widget.FrameLayout
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.*
 import androidx.compose.animation.fadeIn

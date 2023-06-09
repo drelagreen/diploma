@@ -83,7 +83,4 @@ interface ServerApi {
     fun getInfoWindow(
         @Path("id") id: String,
     ): Call<InfoWindow>
-
-    @GET("/oborona/sexcount/")
-    fun getSexCount(): Call<People>
 }

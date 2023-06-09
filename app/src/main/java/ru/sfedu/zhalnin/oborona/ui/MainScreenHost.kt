@@ -1,6 +1,5 @@
 package ru.sfedu.zhalnin.oborona.ui
 
-import android.util.Log
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
 import androidx.compose.foundation.layout.*
@@ -10,11 +9,13 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.maps.android.compose.rememberCameraPositionState
+import ru.sfedu.zhalnin.oborona.R
 import ru.sfedu.zhalnin.oborona.data.model.dto.InfoWindow
 import ru.sfedu.zhalnin.oborona.ui.calendar.CalendarContent
 import ru.sfedu.zhalnin.oborona.ui.dialog.ConfirmationDialog
@@ -138,6 +139,8 @@ fun MainScreenHost(
         }
     }
 
+    val calendarString = stringResource(id = R.string.mshCalendar)
+    val mapString = stringResource(R.string.mshMap)
     LaunchedEffect(appToolbarResult) {
         when (appToolbarResult) {
             AppToolbarViewModel.Result.CalendarButtonClicked -> {
@@ -156,7 +159,7 @@ fun MainScreenHost(
                 )
                 topToolbarViewModel.onAction(
                     TopToolbarViewModel.Action.ChangeTittle(
-                        "Календарь"
+                        calendarString
                     )
                 )
             }
@@ -186,7 +189,7 @@ fun MainScreenHost(
                 )
                 topToolbarViewModel.onAction(
                     TopToolbarViewModel.Action.ChangeTittle(
-                        "Карта"
+                        mapString
                     )
                 )
             }
@@ -286,7 +289,7 @@ fun MainScreenHost(
                             exit = fadeOut()
                         ) {
                             ConfirmationDialog(
-                                question = "Вы действительно хотите отписаться от события?",
+                                question = stringResource(R.string.unsubscribeQuestion),
                                 onDismiss = {
                                     showConfirmationDialog = false
                                 },

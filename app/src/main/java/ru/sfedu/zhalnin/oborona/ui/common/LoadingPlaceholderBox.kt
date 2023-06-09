@@ -11,6 +11,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
+import androidx.compose.ui.tooling.preview.Preview
+import ru.sfedu.zhalnin.oborona.ui.theme.AppTheme
 
 @Composable
 fun LoadingPlaceholderBox() {
@@ -39,4 +41,12 @@ fun LoadingPlaceholderBox() {
             .fillMaxSize()
             .background(brush)
     )
+}
+
+@Preview
+@Composable
+fun Preview() {
+    AppTheme() {
+        LoadingPlaceholderBox()
+    }
 }

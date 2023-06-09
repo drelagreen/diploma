@@ -7,6 +7,10 @@ import androidx.compose.material.IconButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -204,12 +208,27 @@ fun TopToolbarPreview() {
                         mode = TopToolbarViewModel.Mode.COMMON
                     )
                 )
-                TopToolbar(state = TopToolbarViewModel.State(mode = TopToolbarViewModel.Mode.SEARCH))
+                TopToolbar(
+                    state = TopToolbarViewModel.State(mode = TopToolbarViewModel.Mode.SEARCH)
+                )
+
+                var text by remember {
+                    mutableStateOf("Тестовая строка")
+                }
+
                 TopToolbar(
                     state = TopToolbarViewModel.State(
-                        text = "puk puk puk",
-                        mode = TopToolbarViewModel.Mode.SEARCH
-                    )
+                        text = text,
+                        mode = TopToolbarViewModel.Mode.SEARCH,
+                    ),
+                    onAction = {
+                        when (it) {
+                            is TopToolbarViewModel.Action.TextChanged -> {
+                                text = it.text
+                            }
+                            else -> {}
+                        }
+                    }
                 )
                 TopToolbar(state = TopToolbarViewModel.State(mode = TopToolbarViewModel.Mode.USER))
             }

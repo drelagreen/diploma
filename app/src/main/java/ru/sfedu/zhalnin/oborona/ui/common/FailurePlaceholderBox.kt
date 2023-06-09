@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import ru.sfedu.zhalnin.oborona.R
 import ru.sfedu.zhalnin.oborona.ui.theme.AppTheme
 
@@ -24,5 +25,13 @@ fun FailurePlaceholderBox() {
             textAlign = TextAlign.Center,
             text = stringResource(R.string.phCantLoadImage)
         )
+    }
+}
+
+@Preview
+@Composable
+fun FailurePlaceholderBoxPreview() {
+    AppTheme {
+        FailurePlaceholderBox()
     }
 }

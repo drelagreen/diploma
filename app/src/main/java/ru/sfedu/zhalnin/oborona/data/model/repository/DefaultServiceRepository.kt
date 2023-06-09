@@ -8,7 +8,6 @@ import ru.sfedu.zhalnin.oborona.data.model.dto.Entry
 import ru.sfedu.zhalnin.oborona.data.model.dto.FullEvent
 import ru.sfedu.zhalnin.oborona.data.model.dto.InfoWindow
 import ru.sfedu.zhalnin.oborona.data.model.dto.PasswordUpdatable
-import ru.sfedu.zhalnin.oborona.data.model.dto.People
 import ru.sfedu.zhalnin.oborona.data.model.dto.ResetBody
 import ru.sfedu.zhalnin.oborona.data.model.dto.RoleExpanded
 import ru.sfedu.zhalnin.oborona.data.model.dto.ShortMainEvent
@@ -298,15 +297,6 @@ class DefaultServiceRepository(private val api: ServerApi) : ServiceRepository {
      */
     override fun getInfoWindow(id: String): ModelResponse<InfoWindow> {
         return api.getInfoWindow(id).run(::handleCall)
-    }
-
-    /**
-     * Загрузить счетчик мужчин/женщин для события "бал"
-     * Запрос обернут в метод handleCall
-     * @return ModelResponse<People>
-     */
-    override fun getPeople(): ModelResponse<People> {
-        return api.getSexCount().run(::handleCall)
     }
 
     /**

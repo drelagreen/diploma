@@ -22,7 +22,7 @@ fun MainMenu(
     onAction: (MenuViewModel.Action) -> Unit = {},
     userIsLoggedIn: Boolean = false
 ) {
-    var comfirmationDialogVisible by remember { mutableStateOf(false) }
+    var confirmationDialogVisible by remember { mutableStateOf(false) }
 
     BackHandler(true) {
         onBackClicked()
@@ -32,14 +32,14 @@ fun MainMenu(
         modifier = modifier.fillMaxSize(),
         color = AppTheme.colors.transparent
     ) {
-        if (comfirmationDialogVisible) {
+        if (confirmationDialogVisible) {
             ConfirmationDialog(
                 question = stringResource(R.string.mcExitDialogQuestion),
                 onDismiss = {
-                    comfirmationDialogVisible = false
+                    confirmationDialogVisible = false
                 },
                 onConfirm = {
-                    comfirmationDialogVisible = false
+                    confirmationDialogVisible = false
                     onAction(MenuViewModel.Action.LogoutClicked)
                 }
             )
@@ -101,7 +101,7 @@ fun MainMenu(
                         tittle = stringResource(R.string.exit),
                         icon = AppTheme.icons.Logout,
                         onClick = {
-                            comfirmationDialogVisible = true
+                            confirmationDialogVisible = true
                         }
                     )
                 }

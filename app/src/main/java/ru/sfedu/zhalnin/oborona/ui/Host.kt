@@ -61,10 +61,19 @@ private fun provideApi(retrofit: Retrofit): ServerApi = retrofit.create(ServerAp
 
 @Composable
 fun Host() {
-    val serviceRepository: ServiceRepository =
-        DefaultServiceRepository(provideApi(provideRetrofit()))
-    val secretPrefs = SecretPreferencesRepo().get(LocalContext.current)
-    val validator = FieldsValidatorImpl()
+    val context = LocalContext.current
+
+    val serviceRepository: ServiceRepository by remember {
+        mutableStateOf(DefaultServiceRepository(provideApi(provideRetrofit())))
+    }
+
+    val secretPrefs by remember {
+        mutableStateOf(SecretPreferencesRepo().get(context = context))
+    }
+
+    val validator by remember {
+        mutableStateOf(FieldsValidatorImpl())
+    }
 
     val navController = rememberNavController()
     val infoScreenViewModel: InfoScreenViewModel = viewModel(
@@ -233,18 +242,20 @@ fun Host() {
                     SnackbarDuration.Short
                 )
             }
+
             is UserViewModel.Result.Login -> {
+                eventsViewModel.onAction(EventsViewModel.Action.SetUserInfo(result.user))
+                eventsViewModel.onAction(EventsViewModel.Action.SetUserToken(result.token))
+                infoScreenViewModel.onAction(InfoScreenViewModel.Action.ProvideToken(result.token))
+                topToolbarViewModel.onAction(TopToolbarViewModel.Action.ProvideUser(result.user))
+
                 mainToolbarSnackbarState.showSnackbar(
                     message = m8,
                     actionLabel = ok,
                     SnackbarDuration.Short
                 )
-
-                eventsViewModel.onAction(EventsViewModel.Action.SetUserInfo(result.user))
-                eventsViewModel.onAction(EventsViewModel.Action.SetUserToken(result.token))
-                infoScreenViewModel.onAction(InfoScreenViewModel.Action.ProvideToken(result.token))
-                topToolbarViewModel.onAction(TopToolbarViewModel.Action.ProvideUser(result.user))
             }
+
             UserViewModel.Result.Register -> {
                 mainToolbarSnackbarState.showSnackbar(
                     message = m9,
@@ -252,6 +263,7 @@ fun Host() {
                     duration = SnackbarDuration.Long
                 )
             }
+
             UserViewModel.Result.ChangeEmail -> {
                 userEditorSnackbarState.showSnackbar(
                     message = m9,
@@ -259,35 +271,34 @@ fun Host() {
                     duration = SnackbarDuration.Long
                 )
             }
+
             UserViewModel.Result.Logout -> {
+                eventsViewModel.onAction(EventsViewModel.Action.SetUserInfo(null))
+                eventsViewModel.onAction(EventsViewModel.Action.SetUserToken(null))
+                infoScreenViewModel.onAction(InfoScreenViewModel.Action.ProvideToken(null))
+                topToolbarViewModel.onAction(TopToolbarViewModel.Action.ProvideUser(null))
+                eventsViewModel.onAction(EventsViewModel.Action.LoadUserEntries)
+
                 mainToolbarSnackbarState.showSnackbar(
                     message = m10,
                     actionLabel = ok,
                     SnackbarDuration.Short
                 )
+            }
 
+            UserViewModel.Result.LogoutToken -> {
+                navController.navigate("main")
                 eventsViewModel.onAction(EventsViewModel.Action.SetUserInfo(null))
                 eventsViewModel.onAction(EventsViewModel.Action.SetUserToken(null))
                 infoScreenViewModel.onAction(InfoScreenViewModel.Action.ProvideToken(null))
                 topToolbarViewModel.onAction(TopToolbarViewModel.Action.ProvideUser(null))
 
                 eventsViewModel.onAction(EventsViewModel.Action.LoadUserEntries)
-            }
-            UserViewModel.Result.LogoutToken -> {
                 mainToolbarSnackbarState.showSnackbar(
                     message = m11,
                     actionLabel = ok,
                     SnackbarDuration.Short
                 )
-
-                navController.navigate("main")
-
-                eventsViewModel.onAction(EventsViewModel.Action.SetUserInfo(null))
-                eventsViewModel.onAction(EventsViewModel.Action.SetUserToken(null))
-                infoScreenViewModel.onAction(InfoScreenViewModel.Action.ProvideToken(null))
-                topToolbarViewModel.onAction(TopToolbarViewModel.Action.ProvideUser(null))
-
-                eventsViewModel.onAction(EventsViewModel.Action.LoadUserEntries)
             }
 
             UserViewModel.Result.ChangePassword -> {
@@ -297,6 +308,7 @@ fun Host() {
                     SnackbarDuration.Short
                 )
             }
+
             is UserViewModel.Result.UserLoaded -> {
                 eventsViewModel.onAction(EventsViewModel.Action.SetUserInfo(result.user))
                 eventsViewModel.onAction(EventsViewModel.Action.SetUserToken(result.token))
@@ -305,6 +317,7 @@ fun Host() {
 
                 eventsViewModel.onAction(EventsViewModel.Action.LoadUserEntries)
             }
+
             null -> {}
         }
 
@@ -346,27 +359,32 @@ fun Host() {
                                 popUpTo("main_menu") { inclusive = false }
                             }
                         }
+
                         MenuViewModel.Action.AboutFestivalClicked -> {
                             navController.navigate("about_festival") {
                                 popUpTo("main_menu") { inclusive = false }
                             }
                         }
+
                         MenuViewModel.Action.ContactsClicked -> {
                             navController.navigate("contacts") {
                                 popUpTo("main_menu") { inclusive = false }
                             }
                         }
+
                         MenuViewModel.Action.HelpMenuClicked -> {
                             navController.navigate("help_menu") {
                                 popUpTo("main_menu") { inclusive = false }
                             }
                         }
+
                         MenuViewModel.Action.LogoutClicked -> {
                             userViewModel.onAction(
                                 UserViewModel.Action.Logout
                             )
                             navController.popBackStack()
                         }
+
                         MenuViewModel.Action.ProfileClicked -> {
                             userViewModel.onAction(UserViewModel.Action.UserToUserEditor)
 
@@ -424,6 +442,7 @@ fun Host() {
                                 popUpTo("help_menu") { inclusive = false }
                             }
                         }
+
                         else -> {}
                     }
                 }
@@ -574,7 +593,9 @@ fun Host() {
 
         LaunchedEffect(userState.registerSheetIsOpen) {
             if (userState.registerSheetIsOpen) {
-                modal.show {
+                modal.show(
+                    onDismiss = { userViewModel.onAction(UserViewModel.Action.CloseRegisterSheet) }
+                ) {
                     RegisterScreen(
                         modifier = Modifier.padding(
                             start = 16.dp,

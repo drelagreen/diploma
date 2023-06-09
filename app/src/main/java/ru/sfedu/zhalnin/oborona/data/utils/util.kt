@@ -1,13 +1,13 @@
 package ru.sfedu.zhalnin.oborona.data.utils
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringArrayResource
 import ru.sfedu.zhalnin.oborona.R
 import ru.sfedu.zhalnin.oborona.data.model.dto.User
 import java.security.MessageDigest
 import java.time.temporal.ChronoUnit
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
 fun String.asPassword(): String {
     return hash(this)
